@@ -1,12 +1,7 @@
-html{
-  width: 100vw;
-}
-
 body {
   font-family: 'Courier New', monospace;
   font-size: 16px;
   padding: 20px;
-  width: 100%;
 }
 
 
@@ -19,19 +14,20 @@ body {
   flex: 1;
 }
 
-.ascii-wrapper {
-  overflow-x: auto;
-  max-width: 100%;
-  padding: 1rem;
-}
-
 .ascii-art {
-  font-size: clamp(12px, 1.2vw, 16px); /* Responsive font size */
+  text-align: center;
   white-space: pre;
-  line-height: 1.1;
-  min-width: 700px; /* Ensures it doesn't wrap */
 }
 
 table, tr, td {
-  border: 1px solid green;
+  border: 1px dashed green;
+}
+
+.resume-body {
+  border: 1px dashed green;
+}
+
+hr {
+  border: none;
+  border-top: 1px dashed green;
 }
