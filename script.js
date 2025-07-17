@@ -462,24 +462,30 @@ efficient web applications that address real-world needs.`,
   `
 };
 
-let history = [];
-let historyIndex = -1;
+function runCommand() {
+  const cmd = input.value.trim().toLowerCase();
+  const promptLine = `<div><span class="prompt">gyansh@portfolio:~$</span> ${cmd}</div>`;
+  output.innerHTML += promptLine;
+
+  if (cmd === "clear") {
+    output.innerHTML = "";
+  } else {
+    const response = commands[cmd] || `Command not found: ${cmd}`;
+    output.innerHTML += `<div>${response}</div>`;
+  }
+
+  input.value = "";
+  window.scrollTo(0, document.body.scrollHeight);
+}
 
 input.addEventListener("keydown", function (e) {
   if (e.key === "Enter") {
-    const cmd = input.value.trim().toLowerCase();
-    const promptLine = `<div><span class="prompt">gyansh@portfolio:~$</span> ${cmd}</div>`;
-    output.innerHTML += promptLine;
-
-    if (cmd === "clear") {
-      output.innerHTML = "";
-    } else {
-      const response = commands[cmd] || `Command not found: ${cmd}`;
-      output.innerHTML += `<div>${response}</div>`;
-    }
-
-    input.value = "";
-    window.scrollTo(0, document.body.scrollHeight);
+    runCommand();
   }
 });
+
+document.getElementById("runBtn").addEventListener('click', () => {
+  runCommand();
+})
+
 
