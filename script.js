@@ -7,8 +7,8 @@ const commands = {
   - skills<br/>
   - projects<br/>
   - contact<br/>
-  - clear<br/>
   - resume<br/>
+  - clear<br/>
 `,
 
   about: `
